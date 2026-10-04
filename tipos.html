@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section id="tipos" class="documentos-section">
+
+    <div class="documentos-container">
+
+        <!-- CABEÇALHO -->
+        <div class="documentos-header">
+            <span class="section-tag">DOCUMENTOS</span>
+
+            <h2>
+                Encontre o tipo de documento
+                <span>que procura</span>
+            </h2>
+
+            <p>
+                Consulte os principais tipos de documentos que podem ser
+                publicados e encontrados no DocSeguro.
+            </p>
+        </div>
+
+        <!-- PESQUISA -->
+        <div class="pesquisa-documentos">
+
+            <div class="campo-pesquisa">
+                <span>🔎</span>
+
+                <input
+                    type="text"
+                    id="pesquisaDocumento"
+                    placeholder="Pesquisar documento..."
+                >
+            </div>
+
+            <select id="filtroDocumento">
+                <option value="todos">Todos os documentos</option>
+                <option value="identificacao">Identificação</option>
+                <option value="viagem">Viagem</option>
+                <option value="civil">Registo Civil</option>
+                <option value="transito">Trânsito</option>
+                <option value="outros">Outros</option>
+            </select>
+
+        </div>
+
+
+        <!-- CARDS -->
+        <div class="documentos-grid" id="documentosGrid">
+
+            <!-- BI -->
+            <article
+                class="documento-card"
+                data-tipo="identificacao"
+                data-nome="bilhete identidade BI"
+            >
+
+                <div class="documento-imagem">
+                    <img
+                        src="img/OIP bi.webp"
+                        alt="Bilhete de Identidade"
+                    >
+
+                    <span class="documento-badge">
+                        Identificação
+                    </span>
+                </div>
+
+                <div class="documento-info">
+
+                    <h3>Bilhete de Identidade</h3>
+
+                    <p>
+                        Documento utilizado para identificação civil
+                        do cidadão.
+                    </p>
+
+                    <button
+                        class="btn-detalhes"
+                        onclick="abrirDocumento('BI')"
+                    >
+                        Ver detalhes →
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- PASSAPORTE -->
+            <article
+                class="documento-card"
+                data-tipo="viagem"
+                data-nome="passaporte"
+            >
+
+                <div class="documento-imagem">
+                    <img
+                        src="img/descarregar (1).webp"
+                        alt="Passaporte"
+                    >
+
+                    <span class="documento-badge">
+                        Viagem
+                    </span>
+                </div>
+
+                <div class="documento-info">
+
+                    <h3>Passaporte</h3>
+
+                    <p>
+                        Documento utilizado para identificação e
+                        viagens internacionais.
+                    </p>
+
+                    <button
+                        class="btn-detalhes"
+                        onclick="abrirDocumento('PASSAPORTE')"
+                    >
+                        Ver detalhes →
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- CARTA DE CONDUÇÃO -->
+            <article
+                class="documento-card"
+                data-tipo="transito"
+                data-nome="carta conducao carta de condução"
+            >
+
+                <div class="documento-imagem">
+                    <img
+                        src="img/OIP.webp"
+                        alt="Carta de condução"
+                    >
+
+                    <span class="documento-badge">
+                        Trânsito
+                    </span>
+                </div>
+
+                <div class="documento-info">
+
+                    <h3>Carta de Condução</h3>
+
+                    <p>
+                        Documento relacionado com a habilitação legal
+                        para conduzir.
+                    </p>
+
+                    <button
+                        class="btn-detalhes"
+                        onclick="abrirDocumento('CARTA')"
+                    >
+                        Ver detalhes →
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- Cartao bancario -->
+            <article
+                class="documento-card"
+                data-tipo="civil"
+                data-nome="Cartao bancario"
+            >
+
+                <div class="documento-imagem">
+                    <img
+                        src="img/descarregar.webp"
+                        alt="Cartao bancario"
+                    >
+
+                    <span class="documento-badge">
+                        Cartao bancario
+                    </span>
+                </div>
+
+                <div class="documento-info">
+
+                    <h3>Cartao bancario</h3>
+
+                    <p>
+                        Documento relacionado com o registo civil
+                        de nascimento.
+                    </p>
+
+                    <button
+                        class="btn-detalhes"
+                        onclick="abrirDocumento('NASCIMENTO')"
+                    >
+                        Ver detalhes →
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- CARTÃO DE ELEITOR -->
+            <article
+                class="documento-card"
+                data-tipo="outros"
+                data-nome="cartao eleitor cartão eleitor"
+            >
+
+                <div class="documento-imagem">
+                    <img
+                        src="imagens/cartao-eleitor.jpg"
+                        alt="Cartão de eleitor"
+                    >
+
+                    <span class="documento-badge">
+                        Outros
+                    </span>
+                </div>
+
+                <div class="documento-info">
+
+                    <h3>Cartão de Eleitor</h3>
+
+                    <p>
+                        Documento que pode ser utilizado na identificação
+                        eleitoral.
+                    </p>
+
+                    <button
+                        class="btn-detalhes"
+                        onclick="abrirDocumento('ELEITOR')"
+                    >
+                        Ver detalhes →
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- OUTROS -->
+            <article
+                class="documento-card"
+                data-tipo="outros"
+                data-nome="outros documentos cartão"
+            >
+            <div class="documento-imagem">
+    <img
+        src="recu.png"
+        alt="Carta de condução"
+
+                <div class="documento-imagem documento-generico">
+
+                    <div class="icone-documento">
+                        📄
+                    </div>
+
+                    <span class="documento-badge">
+                        Outros
+                    </span>
+
+
+
+                </div>
+
+                <div class="documento-info">
+                 <div class="documento-imagem">
+
+
+
+
+
+                    <h3>Outros Documentos</h3>
+
+                    <p>
+                        Outros documentos pessoais que tenham sido
+                        encontrados ou perdidos.
+                    </p>
+
+                    <button
+                        class="btn-detalhes"
+                        onclick="abrirDocumento('OUTROS')"
+                    >
+                        Ver detalhes →
+                    </button>
+
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <!-- SEM RESULTADO -->
+        <div id="semResultado" class="sem-resultado">
+
+            <div>🔎</div>
+
+            <h3>Nenhum documento encontrado</h3>
+
+            <p>
+                Tente pesquisar por outro nome ou categoria.
+            </p>
+
+        </div>
+
+
+        <!-- ESTATÍSTICAS -->
+        <div class="documentos-estatisticas">
+
+            <div>
+                <strong id="totalTipos">06</strong>
+                <span>Tipos de documentos</span>
+            </div>
+
+            <div>
+                <strong>24h</strong>
+                <span>Disponibilidade</span>
+            </div>
+
+            <div>
+                <strong>100%</strong>
+                <span>Pesquisa online</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MODAL -->
+<div id="modalDocumento" class="modal-documento">
+
+    <div class="modal-caixa">
+
+        <button
+            class="fechar-modal"
+            onclick="fecharDocumento()"
+        >
+            ×
+        </button>
+
+        <div id="modalImagem"></div>
+
+        <div class="modal-conteudo">
+
+            <span id="modalCategoria"></span>
+
+            <h2 id="modalTitulo"></h2>
+
+            <p id="modalDescricao"></p>
+
+            <button
+                class="btn-procurar"
+                onclick="procurarDocumento()"
+            >
+                 Procurar este documento
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+ <style>
+    /* ============================
+   DOCUMENTOS
+============================ */
+
+.documentos-section {
+    padding: 100px 6%;
+    background: #f7f9fc;
+}
+
+.documentos-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.documentos-header {
+    text-align: center;
+    max-width: 750px;
+    margin: auto;
+    margin-bottom: 45px;
+}
+
+.section-tag {
+    color: #2563eb;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.documentos-header h2 {
+    font-size: 42px;
+    line-height: 1.2;
+    margin: 12px 0;
+    color: #11271f;
+}
+
+.documentos-header h2 span {
+    color: #2563eb;
+}
+
+.documentos-header p {
+    color: #667085;
+    line-height: 1.7;
+}
+
+
+/* ============================
+   PESQUISA
+============================ */
+
+.pesquisa-documentos {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.campo-pesquisa {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: white;
+    padding: 0 20px;
+    border: 1px solid #e4e7ec;
+    border-radius: 12px;
+}
+
+.campo-pesquisa span {
+    font-size: 20px;
+}
+
+.campo-pesquisa input {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 17px 0;
+    font-size: 15px;
+}
+
+#filtroDocumento {
+    min-width: 210px;
+    border: 1px solid #e4e7ec;
+    border-radius: 12px;
+    background: white;
+    padding: 0 18px;
+    outline: none;
+    color: #344054;
+}
+
+
+/* ============================
+   GRID
+============================ */
+
+.documentos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+
+/* ============================
+   CARD
+============================ */
+
+.documento-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(16, 24, 40, .06);
+    transition: .35s;
+}
+
+.documento-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(16, 24, 40, .12);
+}
+
+
+/* ============================
+   IMAGEM
+============================ */
+
+.documento-imagem {
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+    background: #eef4ff;
+}
+
+.documento-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.documento-card:hover .documento-imagem img {
+    transform: scale(1.06);
+}
+
+.documento-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: rgba(37, 99, 235, .95);
+    color: white;
+    padding: 7px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+/* DOCUMENTO SEM IMAGEM */
+
+.documento-generico {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icone-documento {
+    font-size: 80px;
+}
+
+
+/* ============================
+   INFORMAÇÃO
+============================ */
+
+.documento-info {
+    padding: 25px;
+}
+
+.documento-info h3 {
+    margin: 0 0 10px;
+    color: #111827;
+    font-size: 20px;
+}
+
+.documento-info p {
+    color: #667085;
+    line-height: 1.6;
+    font-size: 14px;
+    min-height: 65px;
+}
+
+.btn-detalhes {
+    border: none;
+    background: transparent;
+    color: #2563eb;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 8px 0;
+    font-size: 14px;
+}
+
+
+/* ============================
+   SEM RESULTADO
+============================ */
+
+.sem-resultado {
+    display: none;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.sem-resultado div {
+    font-size: 50px;
+}
+
+.sem-resultado h3 {
+    color: #111827;
+}
+
+.sem-resultado p {
+    color: #667085;
+}
+
+
+/* ============================
+   ESTATÍSTICAS
+============================ */
+
+.documentos-estatisticas {
+    margin-top: 60px;
+    padding: 35px;
+    background: #111827;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+    gap: 20px;
+}
+
+.documentos-estatisticas strong {
+    display: block;
+    color: white;
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.documentos-estatisticas span {
+    color: #98a2b3;
+    font-size: 14px;
+}
+
+
+/* ============================
+   MODAL
+============================ */
+
+.modal-documento {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .7);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 9999;
+}
+
+.modal-documento.ativo {
+    display: flex;
+}
+
+.modal-caixa {
+    background: white;
+    width: 100%;
+    max-width: 650px;
+    border-radius: 22px;
+    overflow: hidden;
+    position: relative;
+    animation: aparecer .3s ease;
+}
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+.fechar-modal {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(0,0,0,.7);
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.modal-caixa img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.modal-conteudo {
+    padding: 30px;
+}
+
+.modal-conteudo span {
+    color: #2563eb;
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.modal-conteudo h2 {
+    margin: 8px 0;
+    color: #111827;
+}
+
+.modal-conteudo p {
+    color: #667085;
+    line-height: 1.7;
+}
+
+.btn-procurar {
+    border: none;
+    background: #2563eb;
+    color: white;
+    padding: 14px 22px;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+
+/* ============================
+   RESPONSIVO
+============================ */
+
+@media(max-width: 900px) {
+
+    .documentos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media(max-width: 650px) {
+
+    .documentos-section {
+        padding: 70px 5%;
+    }
+
+    .documentos-header h2 {
+        font-size: 32px;
+    }
+
+    .pesquisa-documentos {
+        flex-direction: column;
+    }
+
+    #filtroDocumento {
+        height: 52px;
+    }
+
+    .documentos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .documentos-estatisticas {
+        grid-template-columns: 1fr;
+    }
+
+}
+ </style>
+</body>
+</html>
